@@ -59,7 +59,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <header class="nav" id="nav">
   <nav class="pill-nav" aria-label="منوی اصلی">
     <a class="brand" href="#top" aria-label="هورمند"><img src="img/mark.png" alt="" width="32" height="32"><b>هورمند</b></a>
-    <div class="links">
+    <div class="links" id="navLinks"><i class="lens" aria-hidden="true"></i>
       <a href="#features">امکانات</a>
       <a href="#control">چرا هورمند</a>
       <a href="#flow">روند کار</a>

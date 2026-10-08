@@ -260,3 +260,36 @@ if (chart) {
 document.querySelectorAll('.col li').forEach((li) => {
   li.addEventListener('pointermove', (e) => { const r = li.getBoundingClientRect(); li.style.setProperty('--mx', (e.clientX - r.left) + 'px'); li.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
 });
+
+
+/* ---------- crystal navigation: the lens slides to the hovered link and rests on the section you are reading ---------- */
+(() => {
+  const box = document.getElementById('navLinks');
+  if (!box) return;
+  const lens = box.querySelector('.lens');
+  const links = [...box.querySelectorAll('a')];
+  let current = null;
+  const to = (a) => {
+    if (!a) { lens.style.opacity = '0'; return; }
+    lens.style.width = a.offsetWidth + 'px';
+    lens.style.transform = `translateX(${a.offsetLeft}px)`;
+    lens.style.opacity = '1';
+  };
+  const rest = () => to(current);
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    links.forEach((a) => a.addEventListener('pointerenter', () => to(a)));
+    box.addEventListener('pointerleave', rest);
+  }
+  const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const seen = new Map();
+  const io2 = new IntersectionObserver((es) => {
+    es.forEach((e) => seen.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0));
+    let best = null, bv = 0;
+    seen.forEach((v, id) => { if (v > bv && map.has(id)) { bv = v; best = map.get(id); } });
+    current = bv > 0 ? best : null;
+    links.forEach((a) => a.classList.toggle('cur', a === current));
+    if (!box.matches(':hover')) rest();
+  }, { threshold: [0, .15, .3, .5, .75] });
+  map.forEach((_, id) => { const s = document.getElementById(id); if (s) io2.observe(s); });
+  addEventListener('resize', rest);
+})();
