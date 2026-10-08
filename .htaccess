@@ -1,4 +1,6 @@
 # ===== هورمند: لندینگ امن و سریع (Apache / cPanel / LiteSpeed) =====
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .css .js .html .php .xml .txt
 Options -Indexes -MultiViews
 ServerSignature Off
 
