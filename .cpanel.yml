@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    # cPanel runs these lines when you press "Deploy HEAD Commit" in Git Version Control.
+    # Change DEPLOYPATH if the document root of the domain is different.
+    - export DEPLOYPATH=/home/ilinkn/ramtinai.com/
+    - /bin/cp -R hoormand.php styles.css app.js robots.txt sitemap.xml .htaccess fonts img $DEPLOYPATH
+    # config.php holds the phone numbers you edit on the server: it is copied only the first time, never overwritten
+    - /bin/sh -c '[ -f "$DEPLOYPATH/config.php" ] || /bin/cp config.php "$DEPLOYPATH"'
+    - /bin/chmod 644 $DEPLOYPATH/hoormand.php $DEPLOYPATH/config.php $DEPLOYPATH/.htaccess $DEPLOYPATH/robots.txt $DEPLOYPATH/sitemap.xml $DEPLOYPATH/styles.css $DEPLOYPATH/app.js

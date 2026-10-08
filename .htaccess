@@ -1,0 +1,52 @@
+# ===== هورمند: لندینگ امن و سریع (Apache / cPanel / LiteSpeed) =====
+Options -Indexes -MultiViews
+ServerSignature Off
+
+# صفحهٔ اصلی همین لندینگ باشد (اگر فایل index دیگری هم در پوشه باشد، این مقدم است)
+DirectoryIndex hoormand.php index.html index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# همیشه https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# www به بدون www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# آدرس مستقیم فایل صفحه، به آدرس اصلی برود (تکراری نشود)
+RewriteCond %{THE_REQUEST} \s/+hoormand\.php[\s?] [NC]
+RewriteRule ^hoormand\.php$ / [L,R=301]
+</IfModule>
+
+# فایل‌های داخلی از بیرون باز نشود
+<FilesMatch "^(config\.php|build-zip\.py|seo-apply\.py|.*\.(py|md|log|bak|old|sql|env|ini|sh))$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^\.(?!well-known)">
+  Require all denied
+</FilesMatch>
+
+# فقط GET و HEAD
+<IfModule mod_rewrite.c>
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|OPTIONS)$
+RewriteRule ^ - [F]
+</IfModule>
+
+# سرعت
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json application/ld+json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+AddType font/woff2 .woff2
+AddType image/webp .webp
