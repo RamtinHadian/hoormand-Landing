@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610090249">
+<link rel="stylesheet" href="styles.css?v=202610090254">
 </head>
 <body>
 
@@ -273,7 +273,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
     <div class="about-text rv" style="--i:2">
       <p><b>هورمند</b> یک <b>سامانهٔ اتوماسیون اداری و بازرگانی</b> کاملاً فارسی است که کارهای روزانهٔ شرکت را یک‌جا جمع می‌کند: <b>نامه‌نگاری اداری</b> با شمارهٔ خودکار، ارجاع و امضای مدیرعامل؛ <b>مدیریت مشتریان (CRM)</b> با پروندهٔ کامل هر مشتری، قیف فروش و پیگیری روزانه؛ <b>صدور پیش‌فاکتور</b> با تأیید مدیرعامل؛ <b>سامانهٔ گارانتی</b> با گواهی چاپی؛ و <b>سیستم پشتیبانی مشتریان</b> با پلن، اشتراک و مهلت پاسخ.</p>
       <p>سامانه به <b>تلفن‌خانهٔ ایزابل (Issabel)</b> وصل می‌شود و هنگام تماس مشتری، نام و پروندهٔ او را روی صفحهٔ همکار نشان می‌دهد. <b>پیامک خودکار به مشتری</b> (با کاوه‌نگار)، <b>تقویم شمسی</b>، اعلان موبایل، وظایف و گزارش روزانه، و گزارشات مدیریتی با نمودار هم در آن هست.</p>
-      <p>هورمند روی <b>سرور خودتان</b> نصب می‌شود، هر شب نسخهٔ پشتیبان می‌گیرد و روی رایانه و گوشی کار می‌کند. برای دیدن آن می‌توانید <a href="#contact">نمایش آزمایشی</a> را باز کنید.</p>
+      <p>هورمند روی <b>سرور خودتان</b> نصب می‌شود، هر شب نسخهٔ پشتیبان می‌گیرد و روی رایانه و گوشی کار می‌کند.</p>
     </div>
   </div>
 </section>
@@ -314,6 +314,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610090249" defer></script>
+<script src="app.js?v=202610090254" defer></script>
 </body>
 </html>
