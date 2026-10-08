@@ -2,7 +2,7 @@
 
 // راه‌های تماس؛ هر کدام که خالی باشد در صفحه نشان داده نمی‌شود.
 const CONTACT = window.HOORMAND_CONTACT || {   // on the server these come from config.php
-  demoUrl: 'https://demo.ramtinai.com', phone: '03133920', phoneExt: '500', telegram: '', email: '',
+  demoUrl: 'https://demo.ramtinai.com', phone: '03133920', phoneExt: '500', telegram: '',
 };
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -127,7 +127,6 @@ const phoneText = CONTACT.phone ? faDigits(CONTACT.phone) + (CONTACT.phoneExt ? 
 if (CONTACT.demoUrl) add('ورود به نمایش آزمایشی', CONTACT.demoUrl, true);
 if (CONTACT.phone) add('تماس: ' + phoneText, 'tel:' + CONTACT.phone + (CONTACT.phoneExt ? ',' + CONTACT.phoneExt : ''), !CONTACT.demoUrl);
 if (CONTACT.telegram) add('تلگرام', CONTACT.telegram, false);
-if (CONTACT.email) add('ایمیل', 'mailto:' + CONTACT.email, false);
 if (!row.children.length) row.hidden = true;
 document.querySelectorAll('[data-cta]').forEach((a) => {
   if (CONTACT.demoUrl) { a.href = CONTACT.demoUrl; a.target = '_blank'; a.rel = 'noopener'; }
