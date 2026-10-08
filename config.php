@@ -7,7 +7,5 @@ return [
     'demoUrl'  => 'https://demo.ramtinai.com',   // نشانی نمایش آزمایشی
     'phone'    => '03133920',                     // شمارهٔ تلفن
     'phoneExt' => '500',                          // داخلی
-    'whatsapp' => '',                             // مثلاً https://wa.me/989121234567
     'telegram' => '',                             // مثلاً https://t.me/نام_کاربری
-    'email'    => '',                             // مثلاً info@example.ir
 ];
