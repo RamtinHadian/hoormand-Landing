@@ -291,3 +291,55 @@ document.querySelectorAll('.col li').forEach((li) => {
   map.forEach((_, id) => { const s = document.getElementById(id); if (s) io2.observe(s); });
   addEventListener('resize', rest);
 })();
+
+
+/* ===== MOBILE-WORK ===== */
+(() => {
+  // menu sheet
+  const btn = document.getElementById('menuBtn'), sheet = document.getElementById('sheet');
+  if (btn && sheet) {
+    let t = 0;
+    const open = () => { clearTimeout(t); sheet.hidden = false; requestAnimationFrame(() => requestAnimationFrame(() => sheet.classList.add('open'))); btn.setAttribute('aria-expanded', 'true'); document.body.classList.add('sheet-open'); };
+    const close = () => { sheet.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); document.body.classList.remove('sheet-open'); t = setTimeout(() => { sheet.hidden = true; }, 420); };
+    btn.addEventListener('click', () => (sheet.hidden || !sheet.classList.contains('open') ? open() : close()));
+    sheet.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) close(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && !sheet.hidden) close(); });
+    // swipe down to close
+    const inner = sheet.querySelector('.sheet-in'); let y0 = null;
+    inner.addEventListener('touchstart', (e) => { y0 = e.touches[0].clientY; }, { passive: true });
+    inner.addEventListener('touchend', (e) => { if (y0 !== null && e.changedTouches[0].clientY - y0 > 70) close(); y0 = null; }, { passive: true });
+  }
+
+  // bottom action bar: after the hero, hidden near the contact section
+  const bar = document.getElementById('mbar'), contact = document.getElementById('contact'), hero = document.querySelector('.hero');
+  if (bar && hero) {
+    const ph = document.getElementById('mbarPhone');
+    const row = document.querySelector('#contactRow a[href^="tel:"]');
+    if (ph) { if (row) { ph.href = row.getAttribute('href'); } else ph.hidden = true; }
+    let heroGone = false, nearEnd = false;
+    const upd = () => bar.classList.toggle('show', heroGone && !nearEnd);
+    new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; upd(); }, { threshold: 0.15 }).observe(hero);
+    if (contact) new IntersectionObserver(([e]) => { nearEnd = e.isIntersecting; upd(); }, { threshold: 0.2 }).observe(contact);
+  }
+
+  // before / after tabs
+  const ctrl = document.querySelector('.ctrl');
+  document.querySelectorAll('.ctrl-tabs button').forEach((b) => b.addEventListener('click', () => {
+    ctrl.dataset.view = b.dataset.v;
+    document.querySelectorAll('.ctrl-tabs button').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+  }));
+
+  // cards row dots
+  const row = document.getElementById('features'), dots = [...document.querySelectorAll('#dots i')];
+  if (row && dots.length) {
+    const sync = () => {
+      const cards = [...row.children];
+      const mid = row.getBoundingClientRect().left + row.clientWidth / 2;
+      let best = 0, bd = 1e9;
+      cards.forEach((c, i) => { const r = c.getBoundingClientRect(); const d = Math.abs(r.left + r.width / 2 - mid); if (d < bd) { bd = d; best = i; } });
+      dots.forEach((d, i) => d.classList.toggle('on', i === best));
+    };
+    row.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    sync();
+  }
+})();

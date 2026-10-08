@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610090254">
+<link rel="stylesheet" href="styles.css?v=202610090259">
 </head>
 <body>
 
@@ -68,8 +68,29 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
       <a href="#faq">پرسش‌ها</a>
     </div>
     <a class="btn btn-blue" href="#contact" data-cta>نمایش آزمایشی</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
   </nav>
 </header>
+
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <nav class="sheet-in" aria-label="منوی موبایل">
+    <span class="grab" aria-hidden="true"></span>
+    <a href="#features" data-close>امکانات</a>
+    <a href="#control" data-close>چرا هورمند</a>
+    <a href="#flow" data-close>روند کار</a>
+    <a href="#showcase" data-close>از نزدیک</a>
+    <a href="#mobile" data-close>روی گوشی</a>
+    <a href="#faq" data-close>پرسش‌ها</a>
+    <a class="btn btn-blue btn-lg" href="#contact" data-close data-cta>نمایش آزمایشی</a>
+  </nav>
+</div>
+
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a class="btn btn-blue" href="#contact" data-cta>نمایش آزمایشی</a>
+  <a class="btn btn-glass" href="#contact" id="mbarPhone">تماس</a>
+</div>
 
 <main id="top">
 
@@ -130,6 +151,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
         <ul><li>پلن و اشتراک پشتیبانی</li><li>گواهی گارانتی با مهر و امضا</li><li>صفحهٔ ورود مشتری و دستیار هوشمند</li></ul>
       </article>
     </div>
+    <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </div>
 </section>
 
@@ -139,7 +161,11 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
     <span class="pill-label rv"><i class="heart">♥</i>اطمینان</span>
     <h2 class="h2 dark center rv" style="--i:1">آشفتگی را کنار بگذارید.<br><span class="grad">با اطمینان کار کنید.</span></h2>
 
-    <div class="ctrl">
+    <div class="ctrl-tabs" role="tablist" aria-label="مقایسه">
+      <button type="button" role="tab" data-v="bad" aria-selected="true">بدون هورمند</button>
+      <button type="button" role="tab" data-v="good" aria-selected="false">با هورمند</button>
+    </div>
+    <div class="ctrl" data-view="bad">
       <ul class="col bad">
         <li class="rv" style="--i:0"><i>×</i>فایل‌ها و نامه‌ها در پیام‌رسان‌ها گم می‌شوند</li>
         <li class="rv" style="--i:1"><i>×</i>مشتری‌ها پراکنده در دفترچه و اکسل‌اند</li>
@@ -314,6 +340,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610090254" defer></script>
+<script src="app.js?v=202610090259" defer></script>
 </body>
 </html>
