@@ -454,3 +454,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 @media (max-width: 380px) { .dcard { flex-basis: 88%; } .brand b { display: none; } }
 @media (prefers-reduced-motion: reduce) { .sheet-in, .sheet-bg, .mbar, .menu-btn i { transition: none; } }
+
+/* ===== JUSTIFY: every paragraph is justified; the last line follows the block (centred blocks keep a centred last line) ===== */
+p, .hero-p, .sub, .about-text p, .bar-c p, .faq details > div, .faq details > div p, .minis span, .stage-text, .mob-copy p, .split-copy p {
+  text-align: justify; text-align-last: right; text-justify: inter-word; hyphens: manual; word-spacing: .02em;
+}
+.hero-p, .sub.center, .center .sub, .stage-text, .cta p { text-align-last: center; }
+.about-text { text-align: justify !important; }
+.about-text p { text-align-last: right; }
+@media (max-width: 720px) { .hero-p, .sub, .about-text, .about-text p { text-align: justify !important; } .hero-p, .sub.center, .center .sub, .stage-text, .cta p { text-align-last: center; } }

@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610090259">
+<link rel="stylesheet" href="styles.css?v=202610091334">
 </head>
 <body>
 
@@ -340,6 +340,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610090259" defer></script>
+<script src="app.js?v=202610091334" defer></script>
 </body>
 </html>
