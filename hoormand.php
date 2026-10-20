@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610200956">
+<link rel="stylesheet" href="styles.css?v=202610201005">
 </head>
 <body>
 
@@ -65,7 +65,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
       <a href="#flow">روند کار</a>
       <a href="#showcase">از نزدیک</a>
       <a href="#mobile">روی گوشی</a>
-      <a href="#faq">پرسش‌ها</a>
+      <a href="faq.html">پرسش و پاسخ</a>
     </div>
     <a class="btn btn-blue" href="#contact" data-cta>نمایش آزمایشی</a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="منو" aria-expanded="false" aria-controls="sheet"><i></i><i></i><i></i></button>
@@ -82,7 +82,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
     <a href="#flow" data-close>روند کار</a>
     <a href="#showcase" data-close>از نزدیک</a>
     <a href="#mobile" data-close>روی گوشی</a>
-    <a href="#faq" data-close>پرسش‌ها</a>
+    <a href="faq.html">پرسش و پاسخ</a>
     <a class="btn btn-blue btn-lg" href="#contact" data-close data-cta>نمایش آزمایشی</a>
   </nav>
 </div>
@@ -354,6 +354,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610200956" defer></script>
+<script src="app.js?v=202610201005" defer></script>
 </body>
 </html>
