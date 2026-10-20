@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ramtinhadian.github.io/hoormand-Landing/sitemap.xml
