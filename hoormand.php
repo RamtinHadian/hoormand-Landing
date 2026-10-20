@@ -24,7 +24,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>هورمند | نرم‌افزار اتوماسیون اداری، CRM و مدیریت مشتریان فارسی</title>
-<meta name="description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
+<meta name="description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی، انبار، اتصال به سپیدار و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
 <meta name="theme-color" content="#0c0b14">
 <link rel="icon" href="img/mark.png">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -37,21 +37,21 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <meta property="og:locale" content="fa_IR">
 <meta property="og:site_name" content="هورمند">
 <meta property="og:title" content="هورمند | نرم‌افزار اتوماسیون اداری، CRM و مدیریت مشتریان فارسی">
-<meta property="og:description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
+<meta property="og:description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی، انبار، اتصال به سپیدار و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
 <meta property="og:url" content="https://ramtinai.com/">
 <meta property="og:image" content="https://ramtinai.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="هورمند | نرم‌افزار اتوماسیون اداری، CRM و مدیریت مشتریان فارسی">
-<meta name="twitter:description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
+<meta name="twitter:description" content="هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی، انبار، اتصال به سپیدار و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.">
 <meta name="twitter:image" content="https://ramtinai.com/img/og.png">
 <link rel="apple-touch-icon" href="img/mark.png">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "هورمند", "alternateName": ["Hoormand", "سامانه اتوماسیون اداری هورمند"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web, Linux, Windows", "inLanguage": "fa-IR", "description": "هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.", "url": "https://ramtinai.com/", "image": "https://ramtinai.com/img/og.png", "featureList": ["نامه‌نگاری اداری با شماره‌گذاری و ارجاع", "مدیریت مشتریان (CRM) و قیف فروش", "صدور پیش‌فاکتور با تأیید مدیرعامل", "سامانه گارانتی و گواهی چاپی", "پشتیبانی مشتریان با پلن و مهلت پاسخ", "پاپ‌آپ تماس تلفنی (ایزابل)", "پیامک خودکار به مشتری", "تقویم شمسی و رابط کاملاً فارسی"]}, {"@context": "https://schema.org", "@type": "Organization", "name": "هورمند", "url": "https://ramtinai.com/", "logo": "https://ramtinai.com/img/mark.png", "contactPoint": {"@type": "ContactPoint", "telephone": "+98-31-33920", "contactType": "sales", "availableLanguage": "fa"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "هورمند", "url": "https://ramtinai.com/", "inLanguage": "fa-IR"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "اطلاعات شرکت ما کجا نگه‌داری می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "روی سرور خودتان. سامانه روی سرور شما نصب می‌شود و هر شب از پایگاه داده نسخهٔ پشتیبان می‌گیرد."}}, {"@type": "Question", "name": "روی گوشی هم کار می‌کند؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. صفحه‌ها برای گوشی هم طراحی شده‌اند، با منوی پایین صفحه و اعلان موبایل."}}, {"@type": "Question", "name": "به تلفن شرکت وصل می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "بله، به تلفن‌خانهٔ ایزابل وصل می‌شود. وقتی مشتری زنگ بزند، نام و پروندهٔ او روی صفحهٔ همکار می‌آید و تماس‌ها در سابقه می‌مانند."}}, {"@type": "Question", "name": "پیامک به مشتری چطور فرستاده می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "با پنل کاوه‌نگار. مدیر مشخص می‌کند کدام پیام‌ها (مثل خوش‌آمد یا صدور پیش‌فاکتور) خودکار برای مشتری برود و نام شرکت یا آدرس سایت زیر هر پیامک نوشته می‌شود."}}, {"@type": "Question", "name": "هر همکار همه‌چیز را می‌بیند؟", "acceptedAnswer": {"@type": "Answer", "text": "نه. مدیر برای هر کاربر تعیین می‌کند کدام منوها را ببیند؛ مثلاً حذف مشتری فقط با مدیر سیستم است."}}, {"@type": "Question", "name": "نمایش آزمایشی می‌خواهم.", "acceptedAnswer": {"@type": "Answer", "text": "از دکمهٔ «نمایش آزمایشی» وارد نسخهٔ نمونه شوید؛ همه‌چیز با اطلاعات نمونه است و هر ساعت به حالت اول برمی‌گردد."}}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "هورمند", "alternateName": ["Hoormand", "سامانه اتوماسیون اداری هورمند"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web, Linux, Windows", "inLanguage": "fa-IR", "description": "هورمند سامانهٔ فارسی اتوماسیون اداری و بازرگانی: نامه‌نگاری و ارجاع، مدیریت مشتریان (CRM)، فرصت فروش و پیش‌فاکتور، گارانتی، پشتیبانی، پاپ‌آپ تماس تلفنی، انبار، اتصال به سپیدار و پیامک خودکار. نصب روی سرور خودتان؛ نمایش آزمایشی.", "url": "https://ramtinai.com/", "image": "https://ramtinai.com/img/og.png", "featureList": ["نامه‌نگاری اداری با شماره‌گذاری و ارجاع", "مدیریت مشتریان (CRM) و قیف فروش", "صدور پیش‌فاکتور با تأیید مدیرعامل", "سامانه گارانتی و گواهی چاپی", "پشتیبانی مشتریان با پلن و مهلت پاسخ", "پاپ‌آپ تماس تلفنی (ایزابل)", "پیامک خودکار به مشتری", "انبار و موجودی کالا با گروه‌بندی", "اتصال به حسابداری سپیدار", "تقویم شمسی و رابط کاملاً فارسی"]}, {"@context": "https://schema.org", "@type": "Organization", "name": "هورمند", "url": "https://ramtinai.com/", "logo": "https://ramtinai.com/img/mark.png", "contactPoint": {"@type": "ContactPoint", "telephone": "+98-31-33920", "contactType": "sales", "availableLanguage": "fa"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "هورمند", "url": "https://ramtinai.com/", "inLanguage": "fa-IR"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "اطلاعات شرکت ما کجا نگه‌داری می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "روی سرور خودتان. سامانه روی سرور شما نصب می‌شود و هر شب از پایگاه داده نسخهٔ پشتیبان می‌گیرد."}}, {"@type": "Question", "name": "روی گوشی هم کار می‌کند؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. صفحه‌ها برای گوشی هم طراحی شده‌اند، با منوی پایین صفحه و اعلان موبایل."}}, {"@type": "Question", "name": "به تلفن شرکت وصل می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "بله، به تلفن‌خانهٔ ایزابل وصل می‌شود. وقتی مشتری زنگ بزند، نام و پروندهٔ او روی صفحهٔ همکار می‌آید و تماس‌ها در سابقه می‌مانند."}}, {"@type": "Question", "name": "پیامک به مشتری چطور فرستاده می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "با پنل کاوه‌نگار. مدیر مشخص می‌کند کدام پیام‌ها (مثل خوش‌آمد یا صدور پیش‌فاکتور) خودکار برای مشتری برود و نام شرکت یا آدرس سایت زیر هر پیامک نوشته می‌شود."}}, {"@type": "Question", "name": "هر همکار همه‌چیز را می‌بیند؟", "acceptedAnswer": {"@type": "Answer", "text": "نه. مدیر برای هر کاربر تعیین می‌کند کدام منوها را ببیند؛ مثلاً حذف مشتری فقط با مدیر سیستم است."}}, {"@type": "Question", "name": "به نرم‌افزار حسابداری سپیدار وصل می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. یک ابزار کوچک روی رایانهٔ حسابداری، مشتری‌ها، کالاها و موجودی را از سپیدار به هورمند می‌آورد و پیش‌فاکتور را به سپیدار می‌فرستد."}}, {"@type": "Question", "name": "انبار هم دارد؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. کالا و خدمات، گروه‌بندی، رسید و حواله، انتقال بین انبارها و حداقل موجودی با هشدار."}}, {"@type": "Question", "name": "نمایش آزمایشی می‌خواهم.", "acceptedAnswer": {"@type": "Answer", "text": "از دکمهٔ «نمایش آزمایشی» وارد نسخهٔ نمونه شوید؛ همه‌چیز با اطلاعات نمونه است و هر ساعت به حالت اول برمی‌گردد."}}]}]</script>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610091334">
+<link rel="stylesheet" href="styles.css?v=202610200956">
 </head>
 <body>
 
@@ -136,7 +136,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
         <span class="tagp"><i class="ring"></i>تلفن و پیامک</span>
         <div class="dimg call"><img src="img/call.webp" alt="پاپ‌آپ تماس ورودی مشتری در سامانه هورمند" loading="lazy" width="1760" height="990"></div>
         <h3>مشتری زنگ زد، پروندهاش همان لحظه باز شد.</h3>
-        <ul><li>پاپ‌آپ تماس با نام مشتری</li><li>سابقهٔ همهٔ تماس‌ها</li><li>پیامک خودکار با نام شرکت شما</li></ul>
+        <ul><li>پاپ‌آپ همان لحظهٔ زنگ خوردن، با نام مشتری</li><li>فرصت فروش باز، بدهی و آخرین یادداشت‌ها</li><li>ثبت همهٔ تماس‌ها، حتی داخلی‌های فالو‌می</li></ul>
       </article>
       <article class="dcard rv" style="--i:2">
         <span class="tagp"><i class="ring"></i>نامه و فایل</span>
@@ -150,8 +150,20 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
         <h3>هر درخواست مهلت دارد و هیچ‌کدام فراموش نمی‌شود.</h3>
         <ul><li>پلن و اشتراک پشتیبانی</li><li>گواهی گارانتی با مهر و امضا</li><li>صفحهٔ ورود مشتری و دستیار هوشمند</li></ul>
       </article>
+      <article class="dcard rv" style="--i:4">
+        <span class="tagp"><i class="ring"></i>انبار</span>
+        <div class="dimg"><img src="img/warehouse.webp" alt="انبار و موجودی کالا در سامانهٔ هورمند با گروه‌بندی" loading="lazy" width="1760" height="990"></div>
+        <h3>موجودی هر کالا، با گروه و حداقل هشدار.</h3>
+        <ul><li>گروه‌های سلسله‌مراتبی و دسترسی هر همکار به گروه‌ها</li><li>رسید، حواله، انتقال و انبارگردانی</li><li>کالا و خدمات؛ انبار دارای موجودی حذف نمی‌شود</li></ul>
+      </article>
+      <article class="dcard rv" style="--i:5">
+        <span class="tagp"><i class="ring"></i>اتصال به سپیدار</span>
+        <div class="dimg"><img src="img/sepidar.webp" alt="اتصال هورمند به حسابداری سپیدار: پیش‌فاکتور، فاکتور و دریافت" loading="lazy" width="1760" height="990"></div>
+        <h3>مانده حساب مشتری را همان لحظهٔ تماس ببینید.</h3>
+        <ul><li>مشتری، کالا و موجودی از سپیدار می‌آید</li><li>پیش‌فاکتور را از هورمند به سپیدار بفرستید</li><li>دسترسی جدا برای هر بخش مالی</li></ul>
+      </article>
     </div>
-    <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </section>
 
@@ -177,7 +189,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
       <ul class="col good">
         <li class="rv" style="--i:0"><i>✓</i>همهٔ فایل‌ها و نامه‌ها یک‌جا، با شمارهٔ خودکار</li>
         <li class="rv" style="--i:1"><i>✓</i>هر مشتری یک پرونده با تمام تاریخچه‌اش</li>
-        <li class="rv" style="--i:2"><i>✓</i>پاپ‌آپ تماس و سابقهٔ کامل تماس‌ها</li>
+        <li class="rv" style="--i:2"><i>✓</i>پاپ‌آپ تماس با بدهی، فرصت فروش و سابقهٔ مشتری</li>
         <li class="rv" style="--i:3"><i>✓</i>وظیفه با مسئول، مهلت و اعلان</li>
         <li class="rv" style="--i:4"><i>✓</i>گارانتی و پشتیبانی با مهلت پاسخ مشخص</li>
       </ul>
@@ -316,6 +328,8 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
       <details class="rv" style="--i:3"><summary>پیامک به مشتری چطور فرستاده می‌شود؟</summary><div><p>با پنل کاوه‌نگار. مدیر مشخص می‌کند کدام پیام‌ها (مثل خوش‌آمد یا صدور پیش‌فاکتور) خودکار برای مشتری برود و نام شرکت یا آدرس سایت زیر هر پیامک نوشته می‌شود.</p></div></details>
       <details class="rv" style="--i:4"><summary>هر همکار همه‌چیز را می‌بیند؟</summary><div><p>نه. مدیر برای هر کاربر تعیین می‌کند کدام منوها را ببیند؛ مثلاً حذف مشتری فقط با مدیر سیستم است.</p></div></details>
       <details class="rv" style="--i:5"><summary>نمایش آزمایشی می‌خواهم.</summary><div><p>از دکمهٔ «نمایش آزمایشی» وارد نسخهٔ نمونه شوید؛ همه‌چیز با اطلاعات نمونه است و هر ساعت به حالت اول برمی‌گردد.</p></div></details>
+      <details class="rv" style="--i:6"><summary>به نرم‌افزار حسابداری سپیدار وصل می‌شود؟</summary><div><p>بله. یک ابزار کوچک روی رایانهٔ حسابداری مشتری‌ها، کالاها و موجودی را از سپیدار به هورمند می‌آورد و پیش‌فاکتور را به سپیدار می‌فرستد. اگر سپیدار ندارید، انبار و مشتریان به‌تنهایی در خود هورمند کار می‌کنند.</p></div></details>
+      <details class="rv" style="--i:7"><summary>انبار هم دارد؟</summary><div><p>بله. کالا و خدمات، گروه‌بندی چندسطحی، رسید و حواله، انتقال بین انبارها و حداقل موجودی با هشدار. مدیر تعیین می‌کند هر همکار کدام گروه‌ها و کدام ستون‌ها (مثل مبلغ) را ببیند.</p></div></details>
     </div>
   </div>
 </section>
@@ -340,6 +354,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610091334" defer></script>
+<script src="app.js?v=202610200956" defer></script>
 </body>
 </html>
