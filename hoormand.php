@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610201020">
+<link rel="stylesheet" href="styles.css?v=202610201032">
 </head>
 <body>
 
@@ -246,7 +246,11 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
         <button role="tab" aria-selected="false" data-img="warranty" data-title="گارانتی" data-text="گارانتی هر کالا با سریال و تاریخ پایان؛ درخواست خرابی مرحله‌به‌مرحله و گواهی چاپی.">گارانتی</button>
         <button role="tab" aria-selected="false" data-img="support" data-title="پشتیبانی" data-text="پلن‌ها، اشتراک مشتریان، درخواست‌ها با مهلت پاسخ و نمودار وضعیت.">پشتیبانی</button>
         <button role="tab" aria-selected="false" data-img="reports" data-title="گزارشات" data-text="فروش، تماس‌های بی‌پاسخ، وظایف عقب‌افتاده، گارانتی و پشتیبانی با نمودار.">گزارشات</button>
-        <button role="tab" aria-selected="false" data-img="admin" data-title="کنسول مدیریت" data-text="کاربران و دسترسی‌ها، نام و هویت شرکت، سربرگ نامه‌ها، پیامک، تلفن و پشتیبان‌گیری.">کنسول مدیریت</button>
+        <button role="tab" aria-selected="false" data-img="sc_calls" data-title="تماس‌ها" data-text="همهٔ تماس‌های شرکت با وضعیت، مدت، مشتری و ضبط مکالمه؛ هر همکار فقط تماس‌های خودش را می‌بیند.">تماس‌ها</button>
+        <button role="tab" aria-selected="false" data-img="sc_sepidar" data-title="سپیدار" data-text="پیش‌فاکتور، فاکتور و دریافتی در اتصال به حسابداری سپیدار؛ ارسال از هورمند و دسترسی جدا برای هر بخش.">سپیدار</button>
+        <button role="tab" aria-selected="false" data-img="sc_warehouse" data-title="انبار" data-text="کالا و خدمات با گروه‌بندی، موجودی هر انبار، حداقل هشدار و اسناد رسید، حواله و انتقال.">انبار</button>
+        <button role="tab" aria-selected="false" data-img="sc_tasks" data-title="وظایف" data-text="تابلوی وظایف با مسئول، مهلت و اولویت، و گزارش کار روزانهٔ همکاران.">وظایف</button>
+        <button role="tab" aria-selected="false" data-img="admin" data-title="کنسول مدیریت" data-text="کاربران و جدول دسترسی‌ها، داخلی‌های تلفن، پوشهٔ غیرفعال‌ها، پیامک، سپیدار و تنظیمات سامانه.">کنسول مدیریت</button>
       </div>
       <div class="stage">
         <div class="dev big">
@@ -259,6 +263,10 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
             <img src="img/warranty.webp" alt="سامانهٔ ثبت گارانتی" data-k="warranty" loading="lazy" width="1760" height="990">
             <img src="img/support.webp" alt="پلن‌ها و اشتراک پشتیبانی" data-k="support" loading="lazy" width="1760" height="990">
             <img src="img/reports.webp" alt="گزارشات مدیریتی فروش و پشتیبانی" data-k="reports" loading="lazy" width="1760" height="990">
+            <img src="img/sc_calls.webp" alt="تماس‌های شرکت و سابقهٔ تماس" data-k="sc_calls" loading="lazy" width="1760" height="990">
+            <img src="img/sc_sepidar.webp" alt="اتصال به سپیدار: پیش‌فاکتور و فاکتور" data-k="sc_sepidar" loading="lazy" width="1760" height="990">
+            <img src="img/sc_warehouse.webp" alt="انبار و موجودی کالا با گروه‌بندی" data-k="sc_warehouse" loading="lazy" width="1760" height="990">
+            <img src="img/sc_tasks.webp" alt="تابلوی وظایف و گزارش روزانه" data-k="sc_tasks" loading="lazy" width="1760" height="990">
             <img src="img/admin.webp" alt="کنسول مدیریت کاربران و دسترسی‌ها" data-k="admin" loading="lazy" width="1760" height="990">
           </div>
         </div>
@@ -354,6 +362,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610201020" defer></script>
+<script src="app.js?v=202610201032" defer></script>
 </body>
 </html>
