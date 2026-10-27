@@ -51,7 +51,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 
 <link rel="preload" href="fonts/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css?v=202610261351">
+<link rel="stylesheet" href="styles.css?v=202610270945">
 </head>
 <body>
 
@@ -119,7 +119,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
     <div class="stage-dev rv" style="--i:2" id="stageDev">
       <div class="dev">
         <div class="bar"><i></i><i></i><i></i><span>سامانهٔ هورمند</span></div>
-        <img src="img/deals.webp?v=202610261351" alt="قیف فروش در سامانهٔ هورمند" width="1760" height="990" fetchpriority="high">
+        <img src="img/deals.webp?v=202610270945" alt="قیف فروش در سامانهٔ هورمند" width="1760" height="990" fetchpriority="high">
       </div>
       <div class="chip c1"><b>☎ تماس ورودی</b><small>شرکت آرمان صنعت · داخلی ۵۰۰</small></div>
       <div class="chip c2"><b>✓ پیش‌فاکتور صادر شد</b><small>پیامک به مشتری رفت</small></div>
@@ -128,37 +128,37 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
     <div class="dcards" id="features">
       <article class="dcard rv" style="--i:0">
         <span class="tagp"><i class="ring"></i>مشتریان و فروش</span>
-        <div class="dimg"><img src="img/crm.webp?v=202610261351" alt="خلاصهٔ مشتریان و فروش در نرم‌افزار CRM فارسی هورمند" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg"><img src="img/crm.webp?v=202610270945" alt="خلاصهٔ مشتریان و فروش در نرم‌افزار CRM فارسی هورمند" loading="lazy" width="1760" height="990"></div>
         <h3>مشتری را از اولین تماس تا فروش موفق ببینید.</h3>
         <ul><li>پروندهٔ کامل هر مشتری</li><li>قیف فروش و پیگیری روزانه</li><li>پیش‌فاکتور با تأیید مدیرعامل</li></ul>
       </article>
       <article class="dcard rv" style="--i:1">
         <span class="tagp"><i class="ring"></i>تلفن و پیامک</span>
-        <div class="dimg call"><img src="img/call.webp?v=202610261351" alt="پاپ‌آپ تماس ورودی مشتری در سامانه هورمند" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg call"><img src="img/call.webp?v=202610270945" alt="پاپ‌آپ تماس ورودی مشتری در سامانه هورمند" loading="lazy" width="1760" height="990"></div>
         <h3>مشتری زنگ زد، پروندهاش همان لحظه باز شد.</h3>
         <ul><li>پاپ‌آپ همان لحظهٔ زنگ خوردن، با نام مشتری</li><li>فرصت فروش باز، بدهی و آخرین یادداشت‌ها</li><li>ثبت همهٔ تماس‌ها، حتی داخلی‌های فالو‌می</li></ul>
       </article>
       <article class="dcard rv" style="--i:2">
         <span class="tagp"><i class="ring"></i>نامه و فایل</span>
-        <div class="dimg"><img src="img/letters.webp?v=202610261351" alt="کارتابل نامه‌نگاری اداری با ارجاع و امضا" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg"><img src="img/letters.webp?v=202610270945" alt="کارتابل نامه‌نگاری اداری با ارجاع و امضا" loading="lazy" width="1760" height="990"></div>
         <h3>نامهٔ رسمی با شماره، ارجاع و امضای مدیرعامل.</h3>
         <ul><li>ویرایشگر شبیه Word</li><li>شمارهٔ خودکار نامه</li><li>ارسال فایل به همکار و واحد</li></ul>
       </article>
       <article class="dcard rv" style="--i:3">
         <span class="tagp"><i class="ring"></i>گارانتی و پشتیبانی</span>
-        <div class="dimg"><img src="img/tickets.webp?v=202610261351" alt="درخواست‌های پشتیبانی مشتریان با مهلت پاسخ" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg"><img src="img/tickets.webp?v=202610270945" alt="درخواست‌های پشتیبانی مشتریان با مهلت پاسخ" loading="lazy" width="1760" height="990"></div>
         <h3>هر درخواست مهلت دارد و هیچ‌کدام فراموش نمی‌شود.</h3>
         <ul><li>پلن و اشتراک پشتیبانی</li><li>گواهی گارانتی با مهر و امضا</li><li>صفحهٔ ورود مشتری و دستیار هوشمند</li></ul>
       </article>
       <article class="dcard rv" style="--i:4">
         <span class="tagp"><i class="ring"></i>انبار</span>
-        <div class="dimg"><img src="img/warehouse.webp?v=202610261351" alt="انبار و موجودی کالا در سامانهٔ هورمند با گروه‌بندی" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg"><img src="img/warehouse.webp?v=202610270945" alt="انبار و موجودی کالا در سامانهٔ هورمند با گروه‌بندی" loading="lazy" width="1760" height="990"></div>
         <h3>موجودی هر کالا، با گروه و حداقل هشدار.</h3>
         <ul><li>گروه‌های سلسله‌مراتبی و دسترسی هر همکار به گروه‌ها</li><li>رسید، حواله، انتقال و انبارگردانی</li><li>کالا و خدمات؛ انبار دارای موجودی حذف نمی‌شود</li></ul>
       </article>
       <article class="dcard rv" style="--i:5">
         <span class="tagp"><i class="ring"></i>اتصال به سپیدار</span>
-        <div class="dimg"><img src="img/sepidar.webp?v=202610261351" alt="اتصال هورمند به حسابداری سپیدار: پیش‌فاکتور، فاکتور و دریافت" loading="lazy" width="1760" height="990"></div>
+        <div class="dimg"><img src="img/sepidar.webp?v=202610270945" alt="اتصال هورمند به حسابداری سپیدار: پیش‌فاکتور، فاکتور و دریافت" loading="lazy" width="1760" height="990"></div>
         <h3>مانده حساب مشتری را همان لحظهٔ تماس ببینید.</h3>
         <ul><li>مشتری، کالا و موجودی از سپیدار می‌آید</li><li>پیش‌فاکتور را از هورمند به سپیدار بفرستید</li><li>دسترسی جدا برای هر بخش مالی</li></ul>
       </article>
@@ -256,18 +256,18 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
         <div class="dev big">
           <div class="bar"><i></i><i></i><i></i><span id="stageTitle">امور اداری</span></div>
           <div class="imgs" id="stageImgs">
-            <img class="on" src="img/files.webp?v=202610261351" alt="ارسال و دریافت فایل در امور اداری" data-k="files" loading="lazy" width="1760" height="990">
-            <img src="img/editor.webp?v=202610261351" alt="ویرایشگر نامه‌نگاری اداری" data-k="editor" loading="lazy" width="1760" height="990">
-            <img src="img/customer.webp?v=202610261351" alt="پروندهٔ مشتری در CRM" data-k="customer" loading="lazy" width="1760" height="990">
-            <img src="img/proforma.webp?v=202610261351" alt="صدور پیش‌فاکتور" data-k="proforma" loading="lazy" width="1760" height="990">
-            <img src="img/warranty.webp?v=202610261351" alt="سامانهٔ ثبت گارانتی" data-k="warranty" loading="lazy" width="1760" height="990">
-            <img src="img/support.webp?v=202610261351" alt="پلن‌ها و اشتراک پشتیبانی" data-k="support" loading="lazy" width="1760" height="990">
-            <img src="img/reports.webp?v=202610261351" alt="گزارشات مدیریتی فروش و پشتیبانی" data-k="reports" loading="lazy" width="1760" height="990">
-            <img src="img/sc_calls.webp?v=202610261351" alt="تماس‌های شرکت و سابقهٔ تماس" data-k="sc_calls" loading="lazy" width="1760" height="990">
-            <img src="img/sc_sepidar.webp?v=202610261351" alt="اتصال به سپیدار: پیش‌فاکتور و فاکتور" data-k="sc_sepidar" loading="lazy" width="1760" height="990">
-            <img src="img/sc_warehouse.webp?v=202610261351" alt="انبار و موجودی کالا با گروه‌بندی" data-k="sc_warehouse" loading="lazy" width="1760" height="990">
-            <img src="img/sc_tasks.webp?v=202610261351" alt="تابلوی وظایف و گزارش روزانه" data-k="sc_tasks" loading="lazy" width="1760" height="990">
-            <img src="img/admin.webp?v=202610261351" alt="کنسول مدیریت کاربران و دسترسی‌ها" data-k="admin" loading="lazy" width="1760" height="990">
+            <img class="on" src="img/files.webp?v=202610270945" alt="ارسال و دریافت فایل در امور اداری" data-k="files" loading="lazy" width="1760" height="990">
+            <img src="img/editor.webp?v=202610270945" alt="ویرایشگر نامه‌نگاری اداری" data-k="editor" loading="lazy" width="1760" height="990">
+            <img src="img/customer.webp?v=202610270945" alt="پروندهٔ مشتری در CRM" data-k="customer" loading="lazy" width="1760" height="990">
+            <img src="img/proforma.webp?v=202610270945" alt="صدور پیش‌فاکتور" data-k="proforma" loading="lazy" width="1760" height="990">
+            <img src="img/warranty.webp?v=202610270945" alt="سامانهٔ ثبت گارانتی" data-k="warranty" loading="lazy" width="1760" height="990">
+            <img src="img/support.webp?v=202610270945" alt="پلن‌ها و اشتراک پشتیبانی" data-k="support" loading="lazy" width="1760" height="990">
+            <img src="img/reports.webp?v=202610270945" alt="گزارشات مدیریتی فروش و پشتیبانی" data-k="reports" loading="lazy" width="1760" height="990">
+            <img src="img/sc_calls.webp?v=202610270945" alt="تماس‌های شرکت و سابقهٔ تماس" data-k="sc_calls" loading="lazy" width="1760" height="990">
+            <img src="img/sc_sepidar.webp?v=202610270945" alt="اتصال به سپیدار: پیش‌فاکتور و فاکتور" data-k="sc_sepidar" loading="lazy" width="1760" height="990">
+            <img src="img/sc_warehouse.webp?v=202610270945" alt="انبار و موجودی کالا با گروه‌بندی" data-k="sc_warehouse" loading="lazy" width="1760" height="990">
+            <img src="img/sc_tasks.webp?v=202610270945" alt="تابلوی وظایف و گزارش روزانه" data-k="sc_tasks" loading="lazy" width="1760" height="990">
+            <img src="img/admin.webp?v=202610270945" alt="کنسول مدیریت کاربران و دسترسی‌ها" data-k="admin" loading="lazy" width="1760" height="990">
           </div>
         </div>
         <p class="stage-text" id="stageText" aria-live="polite">ارسال و دریافت فایل میان همکاران و واحدها، گفتگو، درخواست مرخصی و تابلو اعلانات.</p>
@@ -286,9 +286,9 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
       <ul class="ticks rv" style="--i:3"><li>ظاهر یکسان روی رایانه و گوشی</li><li>اعلان موبایل و پاپ‌آپ تماس</li><li>ورود با نام کاربری و رمز</li></ul>
     </div>
     <div class="phones" id="phones" aria-hidden="true">
-      <div class="phone p1" data-speed="0.10"><img src="img/m-home.webp?v=202610261351" alt="سامانه هورمند روی گوشی" loading="lazy" width="600" height="1300"></div>
-      <div class="phone p2" data-speed="0.04"><img src="img/m-crm.webp?v=202610261351" alt="مدیریت مشتریان روی گوشی" loading="lazy" width="600" height="1300"></div>
-      <div class="phone p3" data-speed="0.16"><img src="img/p-home.webp?v=202610261351" alt="صفحهٔ ورود مشتری به پشتیبانی" loading="lazy" width="600" height="1300"></div>
+      <div class="phone p1" data-speed="0.10"><img src="img/m-home.webp?v=202610270945" alt="سامانه هورمند روی گوشی" loading="lazy" width="600" height="1300"></div>
+      <div class="phone p2" data-speed="0.04"><img src="img/m-crm.webp?v=202610270945" alt="مدیریت مشتریان روی گوشی" loading="lazy" width="600" height="1300"></div>
+      <div class="phone p3" data-speed="0.16"><img src="img/p-home.webp?v=202610270945" alt="صفحهٔ ورود مشتری به پشتیبانی" loading="lazy" width="600" height="1300"></div>
     </div>
   </div>
 </section>
@@ -297,7 +297,7 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 <section class="dark-sec portal" id="support">
   <div class="glow-top" aria-hidden="true"></div>
   <div class="wrap split">
-    <div class="split-img rv"><div class="phone solo"><img src="img/p-chat.webp?v=202610261351" alt="صفحهٔ مشتریان: گفتگو دربارهٔ یک درخواست پشتیبانی" loading="lazy" width="600" height="1300"></div></div>
+    <div class="split-img rv"><div class="phone solo"><img src="img/p-chat.webp?v=202610270945" alt="صفحهٔ مشتریان: گفتگو دربارهٔ یک درخواست پشتیبانی" loading="lazy" width="600" height="1300"></div></div>
     <div class="split-copy">
       <span class="pill-label glass rv">پشتیبانی مشتریان</span>
       <h2 class="h2 rv" style="--i:1">مشتری مشکلش را<br><span class="grad">خودش می‌فرستد.</span></h2>
@@ -362,6 +362,6 @@ if ($https) { header('Strict-Transport-Security: max-age=31536000; includeSubDom
 </footer>
 
 <script nonce="<?= $nonce ?>">window.HOORMAND_CONTACT = <?= json_encode($contact, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
-<script src="app.js?v=202610261351" defer></script>
+<script src="app.js?v=202610270945" defer></script>
 </body>
 </html>
