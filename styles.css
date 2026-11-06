@@ -767,3 +767,23 @@ body { background: #efede9 !important; }
 /* buttons on the graphite panels stay light */
 .cta .btn-blue, #preview .btn-blue { background: #fff !important; color: #22252e !important; box-shadow: none !important; }
 @media (hover: hover) and (pointer: fine) { .cta .btn-blue:hover { background: #f0eeea !important; } }
+
+/* ===== PERFORMANCE: no filters while scrolling, no permanent layers, no endless background animations ===== */
+.stack main > section { will-change: auto !important; box-shadow: none !important; }
+.stack main > section::after { content: ''; position: absolute; inset: 0; background: #12141c; opacity: var(--dim, 0); pointer-events: none; z-index: 9; border-radius: inherit; }
+.stack #features .dcard { will-change: auto !important; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1) !important; }
+.stack .w, .stack .in .w, .stack .w.in { filter: none !important; }
+.stack #showcase .imgs img:not(.on) { filter: none !important; transform: none; }
+.stack .chip, .stack .phones .phone, .stack .phone.solo, .stack .ring-o, .stack .mandala, .stack .spin, .stack .scroll-hint i,
+.stack .bar-c::before, .stack .bhead i::after, .stack .trace circle.pulse, .stack .hero .rays .glow, .stack .phones::after { animation: none !important; }
+.stack .dimg img, .stack .dcard .dimg img { transition: none; }
+@media (hover: hover) and (pointer: fine) { .stack .dcard:hover .dimg img { transform: scale(1.3); } }
+
+/* feature cards: one place, they fade into each other (no sliding) */
+.stack #features { display: grid !important; grid-template-columns: minmax(0, 1fr); align-items: start; }
+.stack #features .dcard { grid-area: 1 / 1; align-self: start; margin: 0 !important; transform: none !important; transition: none !important; }
+/* sections scroll normally; no sliding over each other */
+.stack main > section { position: relative !important; transform: none !important; }
+.stack main > section::after { display: none !important; }
+.stack #showcase > .wrap { position: sticky; }
+.stack main > section { top: auto !important; }

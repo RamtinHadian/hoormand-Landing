@@ -221,7 +221,7 @@ if (chart) {
       ctx.beginPath(); ctx.arc(x * W, (0.2 + 0.8 * y) * H, d.s * 1.2, 0, 6.283); ctx.fill();
     });
   };
-  const loop = (now) => { if (!running) return; draw(now, false); requestAnimationFrame(loop); };
+  const loop = (now) => { if (!running) return; if (cv.offsetParent !== null) draw(now, false); requestAnimationFrame(loop); };
   size(); draw(performance.now(), true);
   addEventListener('resize', () => { size(); draw(performance.now(), true); });
   if (reduce) return;
@@ -349,29 +349,43 @@ document.querySelectorAll('.col li').forEach((li) => {
   var secs = [].slice.call(document.querySelectorAll('main > section'));
   if (secs.length < 2 || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
   document.documentElement.classList.add('stack');
-  var cards = [].slice.call(document.querySelectorAll('#features .dcard'));
+  var feat = document.getElementById('features'), cards = [].slice.call(document.querySelectorAll('#features .dcard'));
   var vh = window.innerHeight, ticking = false;
   function layout() {
     vh = window.innerHeight;
     var gap = window.innerWidth <= 760 ? 76 : 84;
     secs.forEach(function (s) { if (s.id !== 'showcase') s.style.top = Math.min(gap, vh - s.offsetHeight - 10) + 'px'; });
     stageLayout();
-    cards.forEach(function (c, i) { c.style.top = (gap + 14 + i * 8) + 'px'; c.__top = gap + 14 + i * 8; });
+    if (feat && cards.length) {
+      var ch = 0; cards.forEach(function (c) { c.style.top = (gap + 14) + 'px'; ch = Math.max(ch, c.offsetHeight); });
+      feat.__ch = ch; feat.__top = gap + 14;
+      feat.style.height = (ch + Math.round(vh * 0.55) * (cards.length - 1)) + 'px';
+    }
     paint();
   }
   function paint() {
     ticking = false;
-    for (var i = 0; i < secs.length - 1; i++) {
-      var r = secs[i + 1].getBoundingClientRect();
-      var p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.9)));
-      var s = secs[i];
-      if (s.id === 'showcase') continue;
-      if (p <= 0.001) { if (s.__p) { s.style.transform = ''; s.style.filter = ''; s.__p = 0; } continue; }
+    var n = secs.length, tops = new Array(n), i, p, s;
+    for (i = 1; i < n; i++) tops[i] = secs[i].getBoundingClientRect().top;      // all reads first
+    for (i = 0; i < n - 1; i++) {                                              // then all writes
+      s = secs[i];
+      continue;   // sections no longer slide over each other: only the cards and the tabs fade in place
+      p = Math.max(0, Math.min(1, (vh - tops[i + 1]) / (vh * 0.9)));
+      if (p <= 0.001) { if (s.__p) { s.style.transform = ''; s.style.removeProperty('--dim'); s.style.willChange = ''; s.__p = 0; } continue; }
+      if (!s.__p) s.style.willChange = 'transform';
       s.__p = p;
-      s.style.transform = 'scale(' + (1 - 0.06 * p).toFixed(4) + ')';
-      s.style.filter = 'brightness(' + (1 - 0.32 * p).toFixed(3) + ')';
+      s.style.transform = 'scale(' + (1 - 0.05 * p).toFixed(4) + ')';
+      s.style.setProperty('--dim', (0.4 * p).toFixed(3));
     }
-    paintCards();
+    if (feat && cards.length) {                                                // cards: fade in place, nothing moves
+      var fr = feat.getBoundingClientRect(), tt = (feat.__top - fr.top) / Math.max(1, fr.height - feat.__ch);
+      tt = Math.max(0, Math.min(1, tt)) * (cards.length - 1);
+      cards.forEach(function (c, k) {
+        var d = Math.abs(tt - k), o = d < 0.3 ? 1 : d > 0.7 ? 0 : 1 - (d - 0.3) / 0.4;
+        o = Math.round(o * 100) / 100;
+        if (c.__o !== o) { c.__o = o; c.style.opacity = o; c.style.visibility = o === 0 ? 'hidden' : 'visible'; c.style.pointerEvents = o > 0.5 ? 'auto' : 'none'; }
+      });
+    }
     paintStage();
   }
   /* the showcase: scrolling plays the tabs one after another, the stage stays in place */
@@ -391,17 +405,6 @@ document.querySelectorAll('.col li').forEach((li) => {
     if (i !== scLast) {
       scLast = i; scTabs[i].click();
       if (window.innerWidth <= 980) { var c = scTabs[i].parentNode, a = scTabs[i].getBoundingClientRect(), b = c.getBoundingClientRect(); c.scrollBy({ left: a.left + a.width / 2 - (b.left + b.width / 2), behavior: 'smooth' }); }
-    }
-  }
-  function paintCards() {
-    for (var i = 0; i < cards.length - 1; i++) {
-      var c = cards[i], n = cards[i + 1].getBoundingClientRect().top;
-      var p = Math.max(0, Math.min(1, 1 - (n - c.__top) / (vh * 0.75)));
-      if (p <= 0.001) { if (c.__p) { c.style.transform = ''; c.style.opacity = ''; c.style.filter = ''; c.__p = 0; } continue; }
-      c.__p = p;
-      c.style.transform = 'scale(' + (1 - 0.07 * p).toFixed(4) + ')';
-      c.style.opacity = (1 - 0.85 * p).toFixed(3);
-      c.style.filter = 'blur(' + (3 * p).toFixed(2) + 'px)';
     }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }
