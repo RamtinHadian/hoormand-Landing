@@ -359,7 +359,7 @@ document.querySelectorAll('.col li').forEach((li) => {
     if (feat && cards.length) {
       var ch = 0; cards.forEach(function (c) { c.style.top = (gap + 14) + 'px'; ch = Math.max(ch, c.offsetHeight); });
       feat.__ch = ch; feat.__top = gap + 14;
-      feat.style.height = (ch + Math.round(vh * 0.55) * (cards.length - 1)) + 'px';
+      feat.style.height = (ch + 160 * (cards.length - 1)) + 'px';
     }
     paint();
   }
@@ -392,7 +392,7 @@ document.querySelectorAll('.col li').forEach((li) => {
   var sc = document.getElementById('showcase'), scTabs = sc ? [].slice.call(sc.querySelectorAll('[role=tab]')) : [], scWrap = sc && sc.querySelector('.wrap'), scLast = -1;
   function stageLayout() {
     if (!sc || !scWrap) return;
-    var step = Math.round(vh * 0.42);
+    var step = 160;
     sc.style.height = (scWrap.offsetHeight + 140 + step * scTabs.length) + 'px';
     scWrap.style.top = (window.innerWidth <= 760 ? 76 : 84) + 'px';
   }
