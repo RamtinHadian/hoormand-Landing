@@ -602,3 +602,50 @@ main > section { min-width: 0; border-radius: var(--r-panel); width: 100%; max-w
 .brand .wm{display:block;height:26px;width:auto}
 .foot .brand .wm{height:24px}
 @media (max-width:760px){.brand .wm{height:23px}}
+
+/* ===== MINIMAL: calmer, flatter, tighter ===== */
+:root { --r-panel: 28px; --r-card: 22px; --panel-navy: #1d2147; }
+body { background: #f3f5fa !important; }
+main { gap: 10px; padding-top: 84px; }
+main > section { max-width: 1240px; }
+.pill-nav { background: #fff; box-shadow: 0 0 0 1px #e6e9f3; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.btn-blue, .nav .btn-blue { background: #1d2147; box-shadow: none; }
+@media (hover: hover) and (pointer: fine) { .btn-blue:hover { background: #2a3066; box-shadow: none; } }
+.btn-glass { background: #fff; box-shadow: inset 0 0 0 1px #dde1ee; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.btn-lg { padding: 12px 26px; font-size: 16px; min-height: 46px; }
+.hero { min-height: 0; background: #fff; box-shadow: 0 0 0 1px #e6e9f3; }
+.hero-in { padding: 64px 0 72px; }
+.scroll-hint, .hero .scroll-hint { display: none; }
+.eyebrow-grad { background: #f3f5fa; box-shadow: none; font-size: 14px; }
+.hero-cta, .cta .hero-cta { margin-top: 24px; }
+.dark-sec, .cta { background: #1d2147; box-shadow: none; padding-block: 64px 60px; }
+.dark-sec .glow-top, .cta .rays { display: none; }
+.light-sec, .mob-sec { padding-block: 64px; }
+.flow-sec { padding-top: 40px; }
+.about { padding: 56px 0 28px; }
+.light-sec, .flow-sec, .mob-sec, .faq-sec, .about { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: 0 0 0 1px #e6e9f3; }
+.col li, .faq details { background: #f7f8fc; box-shadow: none; border-radius: 18px; }
+.dcards { gap: 10px !important; }
+.dcard { min-height: 0; background: rgba(255, 255, 255, .06); -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14); padding: 14px; }
+.dcard::after { display: none; }
+.dcard .dimg { border-radius: 16px; box-shadow: none; }
+.tagp { background: rgba(255, 255, 255, .12); box-shadow: none; }
+.minis div { border-radius: 18px; background: rgba(255, 255, 255, .08); box-shadow: none; }
+.chip { box-shadow: 0 10px 24px -14px rgba(10, 14, 60, .5); border-radius: 14px; }
+.dev { border-radius: 24px; box-shadow: 0 24px 50px -30px rgba(10, 14, 60, .6); }
+.phone { border-radius: 36px; }
+.bar-c { border-radius: 22px 22px 0 0; background: #f7f8fc; box-shadow: none; }
+.bar-c::after { display: none; }
+.pill-label { background: #f3f5fa; }
+.h2 { font-size: clamp(24px, 3vw, 36px); }
+.sub { font-size: 16px; }
+.h-hero { font-size: clamp(30px, 5vw, 56px); }
+.faq summary { padding: 12px 18px; }
+.foot { background: #fff; border-radius: 999px; box-shadow: 0 0 0 1px #e6e9f3; -webkit-backdrop-filter: none; backdrop-filter: none; padding: 14px 24px; }
+@media (max-width: 760px) {
+  :root { --r-panel: 22px; --r-card: 18px; }
+  main { padding: 76px 8px 0; gap: 8px; }
+  .hero-in { padding: 44px 0 52px; }
+  .dark-sec, .cta, .light-sec, .mob-sec { padding-block: 44px; }
+  .foot { border-radius: 22px; }
+}
