@@ -349,11 +349,13 @@ document.querySelectorAll('.col li').forEach((li) => {
   var secs = [].slice.call(document.querySelectorAll('main > section'));
   if (secs.length < 2 || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
   document.documentElement.classList.add('stack');
+  var cards = [].slice.call(document.querySelectorAll('#features .dcard'));
   var vh = window.innerHeight, ticking = false;
   function layout() {
     vh = window.innerHeight;
     var gap = window.innerWidth <= 760 ? 76 : 84;
     secs.forEach(function (s) { s.style.top = Math.min(gap, vh - s.offsetHeight - 10) + 'px'; });
+    cards.forEach(function (c, i) { c.style.top = (gap + 14 + i * 8) + 'px'; c.__top = gap + 14 + i * 8; });
     paint();
   }
   function paint() {
@@ -366,6 +368,18 @@ document.querySelectorAll('.col li').forEach((li) => {
       s.__p = p;
       s.style.transform = 'scale(' + (1 - 0.06 * p).toFixed(4) + ')';
       s.style.filter = 'brightness(' + (1 - 0.32 * p).toFixed(3) + ')';
+    }
+    paintCards();
+  }
+  function paintCards() {
+    for (var i = 0; i < cards.length - 1; i++) {
+      var c = cards[i], n = cards[i + 1].getBoundingClientRect().top;
+      var p = Math.max(0, Math.min(1, 1 - (n - c.__top) / (vh * 0.75)));
+      if (p <= 0.001) { if (c.__p) { c.style.transform = ''; c.style.opacity = ''; c.style.filter = ''; c.__p = 0; } continue; }
+      c.__p = p;
+      c.style.transform = 'scale(' + (1 - 0.07 * p).toFixed(4) + ')';
+      c.style.opacity = (1 - 0.85 * p).toFixed(3);
+      c.style.filter = 'blur(' + (3 * p).toFixed(2) + 'px)';
     }
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }
