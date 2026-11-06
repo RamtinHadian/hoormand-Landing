@@ -28,7 +28,7 @@ RewriteRule ^hoormand\.php$ / [L,R=301]
 <FilesMatch "^(config\.php|build-zip\.py|seo-apply\.py|.*\.(py|md|log|bak|old|sql|env|ini|sh))$">
   Require all denied
 </FilesMatch>
-<FilesMatch "^\.(?!well-known)">
+<FilesMatch "^\.(htaccess|htpasswd|user\.ini|env)$">
   Require all denied
 </FilesMatch>
 
