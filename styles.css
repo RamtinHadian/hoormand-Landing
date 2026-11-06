@@ -787,3 +787,20 @@ body { background: #efede9 !important; }
 .stack main > section::after { display: none !important; }
 .stack #showcase > .wrap { position: sticky; }
 .stack main > section { top: auto !important; }
+
+/* ===== LIGHT MODE: smooth scrolling on every phone and laptop ===== */
+html, body { background-attachment: scroll !important; }
+body { background: #dfe2e8 !important; }
+*, *::before, *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.rays, .glow-top, #trace .spark { display: none !important; }
+.pill-nav::before, .pill-nav::after, .nav .btn-blue::after, .lens::before { display: none !important; animation: none !important; }
+.dimg, .dcard .dimg { -webkit-mask-image: none !important; mask-image: none !important; }
+.dcard, .dev, .chip, .phone, .col li, .faq details, .bar-c, .minis div, .pill-nav, .foot, .hero, .light-sec, .flow-sec, .mob-sec, .faq-sec, .about,
+.dark-sec, .cta, .tagp, .btn, .stack main > section { box-shadow: 0 0 0 1px rgba(30, 36, 60, .10) !important; }
+.dark-sec, .cta { box-shadow: none !important; }
+.pill-nav { background: #fff !important; }
+.light-sec, .flow-sec, .mob-sec, .faq-sec, .about, .hero { background: #f3f4f7 !important; }
+.phones::after, .stage-dev::before { display: none !important; }
+.phone, .phones .phone, .phone.solo { animation: none !important; }
+.rv { transition-duration: .5s; }
+img { content-visibility: auto; }

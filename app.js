@@ -65,7 +65,7 @@ if (waves) {
     });
   };
   drawWaves(0);
-  if (!reduce) {
+  if (false) {
     let on = false;
     const loop = (now) => { if (!on) return; drawWaves(now); requestAnimationFrame(loop); };
     new IntersectionObserver(([e]) => { on = e.isIntersecting; if (on) requestAnimationFrame(loop); }).observe(waves);
@@ -224,7 +224,7 @@ if (chart) {
   const loop = (now) => { if (!running) return; if (cv.offsetParent !== null) draw(now, false); requestAnimationFrame(loop); };
   size(); draw(performance.now(), true);
   addEventListener('resize', () => { size(); draw(performance.now(), true); });
-  if (reduce) return;
+  if (reduce || true) return;
   new IntersectionObserver(([e]) => { running = e.isIntersecting; if (running) requestAnimationFrame(loop); }).observe(hero);
   if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
     hero.addEventListener('pointermove', (e) => { const r = hero.getBoundingClientRect(); leanTo = ((e.clientX - r.left) / r.width - 0.5) * 2; });
@@ -236,7 +236,7 @@ if (chart) {
 /* a bright spark travels along the chart line, again and again */
 (() => {
   const tr = document.getElementById('trace');
-  if (!tr || reduce) return;
+  if (!tr || reduce || true) return;
   let t0 = 0, vis = false;
   new IntersectionObserver(([e]) => { vis = e.isIntersecting; if (vis) requestAnimationFrame(step); }).observe(tr);
   const step = (now) => {
@@ -381,7 +381,7 @@ document.querySelectorAll('.col li').forEach((li) => {
       var fr = feat.getBoundingClientRect(), tt = (feat.__top - fr.top) / Math.max(1, fr.height - feat.__ch);
       tt = Math.max(0, Math.min(1, tt)) * (cards.length - 1);
       cards.forEach(function (c, k) {
-        var d = Math.abs(tt - k), o = d < 0.3 ? 1 : d > 0.7 ? 0 : 1 - (d - 0.3) / 0.4;
+        var d = Math.abs(tt - k), o = d < 0.36 ? 1 : d > 0.5 ? 0 : 1 - (d - 0.36) / 0.14;
         o = Math.round(o * 100) / 100;
         if (c.__o !== o) { c.__o = o; c.style.opacity = o; c.style.visibility = o === 0 ? 'hidden' : 'visible'; c.style.pointerEvents = o > 0.5 ? 'auto' : 'none'; }
       });
