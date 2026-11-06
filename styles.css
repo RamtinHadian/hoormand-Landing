@@ -731,3 +731,36 @@ body { background: #dfe2e8 !important; }
   .stack #features .dcard h3 { font-size: 20px; margin-top: 4px; }
 }
 @media (hover: hover) and (pointer: fine) { .stack #features .dcard:hover { transform: none; } }
+
+/* ===== Flowra-like touches: warm paper, orange accent, pastel cards, word reveal, scroll-played showcase ===== */
+html, body { background: #efede9 !important; }
+body { background: #efede9 !important; }
+.hero { background: linear-gradient(180deg, #faf9f7, #f1efeb) !important; box-shadow: 0 0 0 1px #e3dfd8 !important; }
+.light-sec, .flow-sec, .mob-sec, .faq-sec, .about, #support {
+  background: linear-gradient(180deg, #faf9f7, #f3f1ed) !important; box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #e3dfd8 !important; }
+.pill-nav { background: rgba(255, 255, 255, .95) !important; box-shadow: 0 12px 30px -18px rgba(60, 50, 30, .4), 0 0 0 1px #e8e4dd !important; }
+.grad, .h-hero .grad { -webkit-text-fill-color: #e4572e !important; color: #e4572e !important; }
+#preview .grad, .cta .grad { -webkit-text-fill-color: #ff9a6b !important; color: #ff9a6b !important; }
+.bar-c:nth-child(1) { background: linear-gradient(180deg, #e6edfc, #f8f9fb) !important; }
+.bar-c:nth-child(2) { background: linear-gradient(180deg, #eee7fb, #f9f8fb) !important; }
+.bar-c:nth-child(3) { background: linear-gradient(180deg, #fbe9df, #fbf9f7) !important; }
+.bar-c:nth-child(4) { background: linear-gradient(180deg, #e3f3ea, #f8faf9) !important; }
+.col li, .faq details, .minis div { background: #fff !important; box-shadow: 0 0 0 1px #e8e4dd, 0 10px 24px -20px rgba(60, 50, 30, .4) !important; }
+.btn-blue, .nav .btn-blue { background: #26211c !important; }
+
+/* words of the headings */
+.stack .w { display: inline-block; opacity: 0; transform: translateY(.45em); filter: blur(7px);
+  transition: opacity .7s var(--out), transform .7s var(--out), filter .7s var(--out); transition-delay: calc(var(--k, 0) * 65ms + 120ms); }
+.stack .in .w, .stack .w.in { opacity: 1; transform: none; filter: none; }
+
+/* the showcase plays while you scroll: the stage stays in place */
+.stack #showcase { position: relative !important; align-self: stretch; box-shadow: none !important; }
+.stack #showcase > .wrap { position: sticky; }
+.stack #showcase .stage-text { transition: opacity .35s; }
+.stack #showcase .imgs img { transition: opacity .6s var(--out), transform .8s var(--out), filter .6s; }
+.stack #showcase .imgs img:not(.on) { filter: blur(6px); transform: scale(1.03); }
+.stack #showcase { padding-block: 24px 36px !important; }
+.stack #showcase .show { margin-top: 22px; }
+.stack #showcase .pill-label { margin-bottom: 10px; }
+.stack #showcase .dev.big { width: min(100%, calc((100svh - 340px) * 1.78)); margin-inline: auto; }
+@media (max-width: 980px) { .stack #showcase .dev.big { width: 100%; } }

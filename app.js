@@ -354,7 +354,8 @@ document.querySelectorAll('.col li').forEach((li) => {
   function layout() {
     vh = window.innerHeight;
     var gap = window.innerWidth <= 760 ? 76 : 84;
-    secs.forEach(function (s) { s.style.top = Math.min(gap, vh - s.offsetHeight - 10) + 'px'; });
+    secs.forEach(function (s) { if (s.id !== 'showcase') s.style.top = Math.min(gap, vh - s.offsetHeight - 10) + 'px'; });
+    stageLayout();
     cards.forEach(function (c, i) { c.style.top = (gap + 14 + i * 8) + 'px'; c.__top = gap + 14 + i * 8; });
     paint();
   }
@@ -364,12 +365,33 @@ document.querySelectorAll('.col li').forEach((li) => {
       var r = secs[i + 1].getBoundingClientRect();
       var p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.9)));
       var s = secs[i];
+      if (s.id === 'showcase') continue;
       if (p <= 0.001) { if (s.__p) { s.style.transform = ''; s.style.filter = ''; s.__p = 0; } continue; }
       s.__p = p;
       s.style.transform = 'scale(' + (1 - 0.06 * p).toFixed(4) + ')';
       s.style.filter = 'brightness(' + (1 - 0.32 * p).toFixed(3) + ')';
     }
     paintCards();
+    paintStage();
+  }
+  /* the showcase: scrolling plays the tabs one after another, the stage stays in place */
+  var sc = document.getElementById('showcase'), scTabs = sc ? [].slice.call(sc.querySelectorAll('[role=tab]')) : [], scWrap = sc && sc.querySelector('.wrap'), scLast = -1;
+  function stageLayout() {
+    if (!sc || !scWrap) return;
+    var step = Math.round(vh * 0.42);
+    sc.style.height = (scWrap.offsetHeight + 140 + step * scTabs.length) + 'px';
+    scWrap.style.top = (window.innerWidth <= 760 ? 76 : 84) + 'px';
+  }
+  function paintStage() {
+    if (!sc || !scTabs.length) return;
+    var r = sc.getBoundingClientRect(), total = sc.offsetHeight - scWrap.offsetHeight - 40;
+    var p = Math.max(0, Math.min(0.9999, (-r.top + 40) / Math.max(1, total)));
+    if (r.top > vh || r.bottom < 0) return;
+    var i = Math.floor(p * scTabs.length);
+    if (i !== scLast) {
+      scLast = i; scTabs[i].click();
+      if (window.innerWidth <= 980) { var c = scTabs[i].parentNode, a = scTabs[i].getBoundingClientRect(), b = c.getBoundingClientRect(); c.scrollBy({ left: a.left + a.width / 2 - (b.left + b.width / 2), behavior: 'smooth' }); }
+    }
   }
   function paintCards() {
     for (var i = 0; i < cards.length - 1; i++) {
@@ -388,4 +410,25 @@ document.querySelectorAll('.col li').forEach((li) => {
   window.addEventListener('load', layout);
   if (window.ResizeObserver) { var ro = new ResizeObserver(layout); secs.forEach(function (s) { ro.observe(s); }); }
   layout();
+})();
+
+/* headings: the words come in one by one (sharp after a soft blur); whole words only, so Persian letters keep joining */
+(function () {
+  var heads = [].slice.call(document.querySelectorAll('main .h2, main .h-hero'));
+  heads.forEach(function (h) {
+    var k = 0;
+    (function walk(n) {
+      [].slice.call(n.childNodes).forEach(function (c) {
+        if (c.nodeType === 3) {
+          var parts = c.nodeValue.split(/(\s+)/), f = document.createDocumentFragment();
+          parts.forEach(function (t) {
+            if (!t) return;
+            if (/^\s+$/.test(t)) { f.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span'); w.className = 'w'; w.style.setProperty('--k', k++); w.textContent = t; f.appendChild(w);
+          });
+          n.replaceChild(f, c);
+        } else if (c.nodeType === 1 && c.tagName !== 'BR') walk(c);
+      });
+    })(h);
+  });
 })();
