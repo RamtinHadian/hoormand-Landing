@@ -123,9 +123,9 @@ const add = (text, href, primary) => {
   if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; }
   row.append(a);
 };
-const phoneText = CONTACT.phone ? faDigits(CONTACT.phone) + (CONTACT.phoneExt ? ' (داخلی ' + faDigits(CONTACT.phoneExt) + ')' : '') : '';
+const phoneText = CONTACT.phone ? faDigits(CONTACT.phone) : '';   // the extension is not dialled or shown: only the main number
 if (CONTACT.demoUrl) add('ورود به نمایش آزمایشی', CONTACT.demoUrl, true);
-if (CONTACT.phone) add('تماس: ' + phoneText, 'tel:' + CONTACT.phone + (CONTACT.phoneExt ? ',' + CONTACT.phoneExt : ''), !CONTACT.demoUrl);
+if (CONTACT.phone) add('تماس: ' + phoneText, 'tel:' + CONTACT.phone, !CONTACT.demoUrl);
 if (CONTACT.telegram) add('تلگرام', CONTACT.telegram, false);
 if (!row.children.length) row.hidden = true;
 document.querySelectorAll('[data-cta]').forEach((a) => {
