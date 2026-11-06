@@ -343,3 +343,35 @@ document.querySelectorAll('.col li').forEach((li) => {
     sync();
   }
 })();
+
+/* stacked sections: each panel stays pinned while the next one slides over it, the one underneath sinks back softly */
+(function () {
+  var secs = [].slice.call(document.querySelectorAll('main > section'));
+  if (secs.length < 2 || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+  document.documentElement.classList.add('stack');
+  var vh = window.innerHeight, ticking = false;
+  function layout() {
+    vh = window.innerHeight;
+    var gap = window.innerWidth <= 760 ? 76 : 84;
+    secs.forEach(function (s) { s.style.top = Math.min(gap, vh - s.offsetHeight - 10) + 'px'; });
+    paint();
+  }
+  function paint() {
+    ticking = false;
+    for (var i = 0; i < secs.length - 1; i++) {
+      var r = secs[i + 1].getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.9)));
+      var s = secs[i];
+      if (p <= 0.001) { if (s.__p) { s.style.transform = ''; s.style.filter = ''; s.__p = 0; } continue; }
+      s.__p = p;
+      s.style.transform = 'scale(' + (1 - 0.06 * p).toFixed(4) + ')';
+      s.style.filter = 'brightness(' + (1 - 0.32 * p).toFixed(3) + ')';
+    }
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(layout); secs.forEach(function (s) { ro.observe(s); }); }
+  layout();
+})();
