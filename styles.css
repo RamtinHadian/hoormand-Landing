@@ -598,3 +598,7 @@ main > section { min-width: 0; border-radius: var(--r-panel); width: 100%; max-w
 .dark-sec, .cta { color: #fff; }
 .dark-sec h3, .dark-sec h4, .dark-sec b, .cta h3 { color: #fff; }
 .cta .rays { opacity: .35; -webkit-mask-image: linear-gradient(to top, #000, transparent 85%); mask-image: linear-gradient(to top, #000, transparent 85%); }
+/* wordmark logo */
+.brand .wm{display:block;height:26px;width:auto}
+.foot .brand .wm{height:24px}
+@media (max-width:760px){.brand .wm{height:23px}}
