@@ -764,3 +764,6 @@ body { background: #efede9 !important; }
 .stack #showcase .pill-label { margin-bottom: 10px; }
 .stack #showcase .dev.big { width: min(100%, calc((100svh - 340px) * 1.78)); margin-inline: auto; }
 @media (max-width: 980px) { .stack #showcase .dev.big { width: 100%; } }
+/* buttons on the graphite panels stay light */
+.cta .btn-blue, #preview .btn-blue { background: #fff !important; color: #22252e !important; box-shadow: none !important; }
+@media (hover: hover) and (pointer: fine) { .cta .btn-blue:hover { background: #f0eeea !important; } }
