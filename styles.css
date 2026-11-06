@@ -463,3 +463,138 @@ p, .hero-p, .sub, .about-text p, .bar-c p, .faq details > div, .faq details > di
 .about-text { text-align: justify !important; }
 .about-text p { text-align-last: right; }
 @media (max-width: 720px) { .hero-p, .sub, .about-text, .about-text p { text-align: justify !important; } .hero-p, .sub.center, .center .sub, .stage-text, .cta p { text-align-last: center; } }
+
+/* ====================================================================================================================
+   SKIN "bento glass" (2026-11): sky gradient page, big rounded panels, frosted-glass cards, pill buttons.
+   Only the look changes: no text, link or structure was touched. Remove this file (and its line in build) to return
+   to the old dark look.
+   ==================================================================================================================== */
+:root {
+  --ink: #1d2147;
+  --ink2: #4a4f7a;
+  --panel-navy: linear-gradient(155deg, #1f2766 0%, #2d3a86 52%, #3a4a9a 100%);
+  --r-panel: 52px;
+  --r-card: 38px;
+}
+html { background: #c4d3f3; }
+body {
+  color: var(--ink); min-height: 100vh;
+  background: radial-gradient(900px 600px at 12% 6%, #9fc2f4 0%, rgba(159, 194, 244, 0) 70%),
+    radial-gradient(900px 700px at 92% 30%, #e9cdf0 0%, rgba(233, 205, 240, 0) 70%),
+    radial-gradient(1000px 800px at 20% 80%, #f6d9d2 0%, rgba(246, 217, 210, 0) 70%),
+    linear-gradient(180deg, #b7cdf2 0%, #cdd3f3 45%, #efdcdf 100%);
+  background-attachment: fixed;
+}
+main { padding: 96px 14px 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+main > section { min-width: 0; border-radius: var(--r-panel); width: 100%; max-width: 1560px; margin-inline: auto; overflow: clip; }
+
+/* navigation: a light frosted pill, dark text */
+.pill-nav { color: var(--ink); border-radius: 999px; padding: 8px 10px 8px 8px;
+  background: rgba(255, 255, 255, .58);
+  -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%);
+  box-shadow: 0 18px 44px -20px rgba(40, 60, 130, .45), inset 0 0 0 1px rgba(255, 255, 255, .85); }
+.pill-nav::before, .pill-nav::after { display: none; }
+.nav .brand, .brand { color: var(--ink); text-shadow: none; }
+.nav .brand img { filter: none; }
+.links a { color: var(--ink2); border-radius: 999px; }
+.links a.cur { color: var(--ink); }
+.lens { border-radius: 999px; background: rgba(255, 255, 255, .85); box-shadow: 0 6px 16px -8px rgba(40, 60, 130, .35), inset 0 0 0 1px #fff; }
+@media (hover: hover) and (pointer: fine) { .links a:hover { background: none; color: var(--ink); } }
+.menu-btn { background: rgba(255, 255, 255, .7) !important; box-shadow: inset 0 0 0 1px #fff !important; }
+.menu-btn i { background: var(--ink) !important; }
+
+/* buttons: round pills; the main one is deep navy (like the round logo of the reference), the second one is white glass */
+.btn { border-radius: 999px; }
+.btn-blue, .nav .btn-blue { background: linear-gradient(180deg, #2c3590, #1b2160); color: #fff; box-shadow: 0 14px 28px -14px rgba(27, 33, 96, .8), inset 0 1px 0 rgba(255, 255, 255, .25); }
+@media (hover: hover) and (pointer: fine) { .btn-blue:hover { background: linear-gradient(180deg, #3a45ad, #232b7a); box-shadow: 0 16px 30px -14px rgba(27, 33, 96, .9), inset 0 1px 0 rgba(255, 255, 255, .3); } }
+.btn-blue::after { display: none; }
+.btn-glass { background: rgba(255, 255, 255, .6); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .9), 0 10px 24px -16px rgba(40, 60, 130, .5);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+@media (hover: hover) and (pointer: fine) { .btn-glass:hover { background: rgba(255, 255, 255, .9); } }
+.btn-lg { border-radius: 999px; }
+/* on the navy panels the glass button stays light-on-dark */
+.dark-sec .btn-glass, .cta .btn-glass { background: rgba(255, 255, 255, .14); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+
+/* hero: a big light panel with the sky inside, dark headline */
+.hero { min-height: calc(100svh - 110px); background:
+    radial-gradient(700px 420px at 15% 20%, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(800px 500px at 88% 85%, rgba(255, 196, 170, .55), rgba(255, 196, 170, 0) 70%),
+    linear-gradient(180deg, #8fb7ee 0%, #b4c2f0 52%, #e9d3e6 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7); }
+.hero .rays { display: none; }
+.hero-in { padding: 90px 0 150px; }
+.h-hero { color: var(--ink); }
+.grad, .h-hero .grad { background: linear-gradient(90deg, #2f55d4 0%, #7c4ddb 55%, #e0723a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dark-sec .grad, .cta .grad { background: linear-gradient(90deg, #9cc2ff 0%, #d2b4ff 55%, #ffc29a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.eyebrow-grad { color: var(--ink); -webkit-text-fill-color: var(--ink); padding: 6px 20px; border-radius: 999px;
+  background: rgba(255, 255, 255, .6); box-shadow: inset 0 0 0 1px #fff; font-size: 15px; }
+.hero-p { color: var(--ink2); }
+.scroll-hint { box-shadow: inset 0 0 0 2px rgba(29, 33, 71, .4); }
+.scroll-hint i { background: var(--ink); }
+
+/* dark sections become deep navy rounded panels (white text stays) */
+.dark-sec, .cta { background: var(--panel-navy); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .14); padding-block: 110px 100px; }
+.dark-sec .glow-top { opacity: .5; }
+.h2 { color: #fff; }
+.h2.dark { color: var(--ink); }
+.sub { color: #d6dcff; }
+.sub.dark { color: var(--ink2); }
+.light-sec .sub, .flow-sec .sub, .mob-sec .sub, .faq-sec .sub, .about .sub { color: var(--ink2); }
+.light-sec .h2, .flow-sec .h2, .mob-sec .h2, .faq-sec .h2, .about .h2 { color: var(--ink); }
+
+/* light sections: frosted white panels */
+.light-sec, .flow-sec, .mob-sec, .faq-sec, .about { background: rgba(255, 255, 255, .5); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .85), 0 30px 70px -40px rgba(40, 60, 130, .45); color: var(--ink); }
+.light-sec { padding-block: 100px; } .mob-sec { padding-block: 100px; }
+.col li, .faq details { background: rgba(255, 255, 255, .8); box-shadow: 0 10px 30px -18px rgba(40, 60, 130, .35), inset 0 0 0 1px #fff; border-radius: 26px; }
+.about-text { color: var(--ink2); }
+
+/* device frame and chips */
+.dev { border-radius: 34px; box-shadow: 0 50px 90px -40px rgba(10, 14, 60, .8), 0 0 0 8px rgba(255, 255, 255, .12), 0 0 0 9px rgba(255, 255, 255, .25); }
+.dev .bar { background: #eef0fb; }
+.chip { border-radius: 22px; background: rgba(255, 255, 255, .72); box-shadow: 0 24px 50px -20px rgba(10, 14, 60, .7), inset 0 0 0 1px #fff; }
+
+/* bento cards: frosted glass, different sizes */
+.dcard { min-height: 540px; padding: 18px; border-radius: var(--r-card);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .20), rgba(255, 255, 255, .08));
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .28), 0 30px 60px -36px rgba(5, 8, 50, .8); }
+.dcard::after { background: radial-gradient(60% 70% at 50% 100%, rgba(150, 190, 255, .35), transparent 70%); }
+.dcard .dimg { border-radius: 28px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255, 255, 255, .3); }
+.dcard ul { color: #dfe5ff; }
+.dcard li::before { border-color: #bcd1ff; box-shadow: inset 0 0 0 2px rgba(188, 209, 255, .25); }
+.tagp { background: rgba(255, 255, 255, .22); border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+/* the bento grid on wide screens only; phones keep the swipe row */
+@media (min-width: 981px) {
+  .dcards { grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .dcard { grid-column: span 2; }
+  .dcard:nth-child(1) { grid-column: span 4; } .dcard:nth-child(2) { grid-column: span 2; }
+  .dcard:nth-child(3) { grid-column: span 2; } .dcard:nth-child(4) { grid-column: span 4; }
+  .dcard:nth-child(5) { grid-column: span 3; } .dcard:nth-child(6) { grid-column: span 3; }
+}
+@media (max-width: 980px) { .dcard { min-height: 0; } }
+
+/* flow steps, tabs, phones, portal */
+.bar-c { border-radius: 34px 34px 0 0; background: linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .45)); box-shadow: inset 0 0 0 1px #fff; }
+.bar-c::after { background: linear-gradient(to top, rgba(255, 255, 255, .6), transparent); }
+.bhead i { border-radius: 16px; }
+.chart::before { background: repeating-linear-gradient(to bottom, transparent 0 calc(25% - 1px), rgba(255, 255, 255, .6) calc(25% - 1px) 25%); }
+.tabs button { border-radius: 999px; color: #d3d9ff; }
+.tabs button[aria-selected="true"] { background: rgba(255, 255, 255, .95); color: var(--ink); box-shadow: 0 14px 30px -14px rgba(5, 8, 50, .7); }
+.minis div { border-radius: 28px; background: rgba(255, 255, 255, .12); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25); }
+.minis span { color: #d6dcff; }
+.stage-text { color: #d6dcff; }
+.phone { border-radius: 46px; background: #1b2160; }
+.orb { box-shadow: 0 30px 70px -40px rgba(40, 60, 130, .6); }
+
+/* footer as a rounded glass bar */
+.foot { background: rgba(255, 255, 255, .5); color: var(--ink2); margin: 14px; border-radius: 999px; padding: 18px 28px;
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: inset 0 0 0 1px #fff; }
+.foot a { color: var(--ink); }
+.mbar { background: rgba(255, 255, 255, .7); }
+@media (max-width: 760px) { main { padding: 84px 8px 0; gap: 10px; } :root { --r-panel: 34px; --r-card: 30px; } .foot { border-radius: 28px; } }
+
+/* text on the navy panels stays white (the page text colour is dark now) */
+.dark-sec, .cta { color: #fff; }
+.dark-sec h3, .dark-sec h4, .dark-sec b, .cta h3 { color: #fff; }
+.cta .rays { opacity: .35; -webkit-mask-image: linear-gradient(to top, #000, transparent 85%); mask-image: linear-gradient(to top, #000, transparent 85%); }
